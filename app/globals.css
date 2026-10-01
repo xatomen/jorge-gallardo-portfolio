@@ -1,27 +1,35 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+@import "devicon/devicon.min.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --ink: #111827;
+  --muted: #64748b;
+  --blue: #2563eb;
+  --line: #e8edf4;
+  --soft: #f7f9fc;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+a { text-decoration: none; }
+::selection { background: #bfdbfe; color: #172554; }
+.container-shell { width: min(100% - 3rem, 72rem); margin-inline: auto; }
+.section-space { padding-block: 6.5rem; }
+.section-title { margin: 0; font-size: clamp(2rem, 4vw, 2.7rem); font-weight: 700; letter-spacing: -.045em; }
+.section-lead { margin: .8rem 0 0; color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
+.focus-ring:focus-visible { outline: none; text-decoration-line: underline; text-decoration-color: #60a5fa; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.focus-underline:focus-visible { outline: none; text-decoration-line: underline; text-decoration-color: #60a5fa; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.card-surface { border: 1px solid var(--line); border-radius: 1rem; background: #fff; box-shadow: 0 8px 28px rgb(15 23 42 / .035); }
+.dark-section { background: #0b1220; color: #f8fafc; }
+.dark-section .section-lead { color: #a5b4c8; }
+.technology-icon { display: inline-block; flex: 0 0 auto; font-size: 1.5rem; line-height: 1; }
+@media (max-width: 640px) {
+  .container-shell { width: min(100% - 2rem, 72rem); }
+  .section-space { padding-block: 4.5rem; }
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
