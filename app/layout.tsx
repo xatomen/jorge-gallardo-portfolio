@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Jorge Gallardo | DevOps Engineer",
   description: "Jorge Gallardo's professional portfolio.",
+  other: {
+    "google-adsense-account": "ca-pub-5934866762759737",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
